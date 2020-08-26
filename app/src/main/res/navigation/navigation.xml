@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/aboutmeFragment">
 
+    <fragment
+        android:id="@+id/aboutmeFragment"
+        android:name="com.example.mymyfirstapp.AboutmeFragment"
+        android:label="fragment_aboutme"
+        tools:layout="@layout/fragment_aboutme" >
+        <action
+            android:id="@+id/action_aboutmeFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.mymyfirstapp.ContactFragment"
+        android:label="fragment_contact"
+        tools:layout="@layout/fragment_contact" >
+        <action
+            android:id="@+id/action_contactFragment_to_aboutmeFragment"
+            app:destination="@id/aboutmeFragment" />
+    </fragment>
 </navigation>
